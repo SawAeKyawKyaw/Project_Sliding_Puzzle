@@ -1,0 +1,151 @@
+/* static/css/puzzle_settings.css */
+
+body {
+    display: block;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* ==== Navigation Tab ==== */
+.nav-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-green);
+    padding: 20px 30px;
+    color: white;
+}
+
+.nav-title {
+    font-size: 1.5em;
+    text-align: center;
+    flex: 1;
+}
+
+/* ==== Styled Buttons ==== */
+.nav-button {
+    position: relative;
+    background: var(--btn1-text);
+    color: var(--color-green);
+    border: none;
+    padding: 10px 30px 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background: var(--btn1-hover-gradient);
+    color: var(--btn1-border);
+}
+
+/* SECTION LAYOUT */
+.section {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Section titles */
+.section-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: var(--btn1-border);
+}
+
+/* SCROLLABLE IMAGE CONTAINER */
+.image-scroll-container {
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid var(--btn1-border);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* REUSE image-grid + selectable-image from before */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.selectable-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.3s;
+}
+
+.selectable-image:hover,
+.selectable-image.selected  {
+    transform: scale(1.05);
+    border-color: var(--btn1-border);
+}
+
+/* DIFFICULTY BUTTONS */
+.grid-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    background: var(--btn1-text);
+    color: var(--color-green);
+    border: 2px solid var(--btn1-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.grid-button:hover,
+.grid-button.selected {
+    background: var(--btn1-hover-gradient);
+    color: var(--text-dark);;
+}
+
+/* PREVIEW AREA */
+#preview-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    border: 2px dashed var(--btn1-border);
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.preview-grid {
+    margin: 0 auto;
+    max-width: 300px;
+    border: 2px solid var(--color-border);
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

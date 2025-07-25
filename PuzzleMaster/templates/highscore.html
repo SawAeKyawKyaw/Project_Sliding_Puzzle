@@ -1,0 +1,65 @@
+<!-- templates/highscore.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>High Score</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/highscore.css') }}">
+</head>
+<body>
+    <div class="nav-tab">
+        <button class="nav-button back-button" onclick="location.href='/'">Back</button>
+        <div class="nav-title">High Score</div>
+        <div class="nav-spacer"></div>
+    </div>
+
+    <!-- === CATEGORIES === -->
+    <div class="section">
+        <div class="section-title">Filter by Difficulty</div>
+        <div class="category-buttons">
+            <button class="category-button selected" data-filter="3x3">3x3</button>
+            <button class="category-button" data-filter="4x4">4x4</button>
+            <button class="category-button" data-filter="5x5">5x5</button>
+        </div>
+    </div>
+
+    <!-- === SCORE TABLE === -->
+    <div class="section">
+        <div class="section-title">Top Scores</div>
+        <button id="toggle-sort" class="sort-toggle">Sort by Moves</button>
+        <table class="score-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Difficulty</th>
+                    <th>Duration</th>
+                    <th>Moves</th>
+                </tr>
+            </thead>
+            <tbody id="score-body">
+                {% for score in scores %}
+                <tr data-difficulty="{{ score.difficulty }}"
+                    data-duration="{{ score.duration }}"
+                    data-moves="{{ score.moves }}">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ score.date[:10] }}</td>
+                    <td>{{ score.difficulty }}</td>
+                    <td>{{ (score.duration // 60) }}m {{ (score.duration % 60) }}s</td>
+                    <td>{{ score.moves }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const defaultDifficulty = "{{ default_filter }}";
+        const defaultSort = "{{ default_sort }}";
+    </script>
+
+    <script src="{{ url_for('static', filename='js/highscore.js') }}"></script>
+
+</body>
+</html>

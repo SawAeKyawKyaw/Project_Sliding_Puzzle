@@ -1,0 +1,40 @@
+<!-- templates/puzzle_play.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sliding Puzzle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/puzzle_play.css') }}">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="nav-tab">
+    <button class="nav-button back-button" onclick="location.href='/'">Quit</button>
+    <div class="nav-title">Sliding Puzzle</div>
+    <div class="nav-spacer"></div>
+  </div>
+
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <div class="status-item"><strong>Time:</strong> <span id="time">00:00</span></div>
+    <div class="status-item"><strong>Moves:</strong> <span id="moves">0</span></div>
+    <button id="reset-btn" class="reset-button">↻ Reset</button>
+  </div>
+
+  <!-- Puzzle Area -->
+  <div class="puzzle-container">
+    <div id="puzzle-grid" class="puzzle-grid"></div>
+  </div>
+
+  <script>
+    const gridSize = "{{ grid }}";
+    const imageSrc = "{{ url_for('puzzle_image', filename=image) }}";
+    const sessionId = "{{ session_id }}"
+  </script>
+
+  <script src="{{ url_for('static', filename='js/puzzle_play.js') }}"></script>
+</body>
+</html>

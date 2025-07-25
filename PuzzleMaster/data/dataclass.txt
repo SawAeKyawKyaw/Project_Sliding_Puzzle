@@ -1,0 +1,5 @@
+sliding_puzzle_record:
+-id             : int
+-difficulty     : str
+-date           : datetime
+-duration         : seconds

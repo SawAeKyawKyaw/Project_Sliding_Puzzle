@@ -1,0 +1,46 @@
+/* static/css/index.css */
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+    color: var(--color-green);
+    text-shadow: 2px 2px 5px #000;
+    margin-bottom: 40px;
+}
+
+.button-base {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    width: 250px;
+    display: block;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.play-button {
+    background: var(--btn1-gradient);
+    color: var(--btn1-text);
+    border-color: var(--btn1-border);
+}
+.play-button:hover {
+    transform: scale(1.05);
+    background: var(--btn1-hover-gradient);
+}
+
+.highscore-button {
+    background: var(--btn2-gradient);
+    color: var(--btn2-text);
+    border-color: var(--btn2-border);
+}
+.highscore-button:hover {
+    transform: scale(1.05);
+    background: var(--btn2-hover-gradient)
+}

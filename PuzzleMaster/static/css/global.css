@@ -1,0 +1,52 @@
+/* static/css/global.css */
+
+:root {
+    /* General Color Palette */
+    --color-green: #39ff14;
+    --color-green-light: #a6f773;
+
+    --color-blue: #4fc3f7;
+    --color-blue-light: #81d4fa;
+
+    --color-yellow: #fff176;
+    --color-purple: #ce93d8;
+    --color-pink: #ff4081;
+
+    /* Button 1 Theme: Play */
+    --btn1-text: #ffffff;
+    --btn1-border: #b6ffb3;
+    --btn1-gradient: linear-gradient(to right, var(--color-green), var(--color-green-light));
+    --btn1-hover-gradient: linear-gradient(to right, #b6fbb3, #d0ffd0);
+
+    /* Button 2 Theme: High Score */
+    --btn2-text: #ffffff;
+    --btn2-border: #b3e5fc;
+    --btn2-gradient: linear-gradient(to right, var(--color-blue), var(--color-blue-light));
+    --btn2-hover-gradient: linear-gradient(to right, #b3e5fc, #e1f5fe);
+
+    /* Font and Background */
+    --font-main: 'Press Start 2P', cursive;
+    --bg-gradient: linear-gradient(135deg, #a8edea, #fed6e3);
+    --background-light: #f0f0f0;
+    --text-dark: #333;
+    --color-border: #ccc;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--font-main);
+    background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: backgroundCycle 20s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes backgroundCycle {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
