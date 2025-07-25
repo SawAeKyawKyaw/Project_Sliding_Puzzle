@@ -1,9 +1,8 @@
-project/
+PuzzleMaster/
 │
 ├── app.py                         # Flask entry
-├── data/                          # All JSON files (highscores, session)
-│     highscores.json
-│     sessions.json
+├── data/                          # All JSON files (highscores)
+│     scores.json
 │
 ├── images/
 │     ├── miscellaneous_images/    # UI images
@@ -11,32 +10,40 @@ project/
 │
 ├── MVC/
 │     ├── Model/
-│     │     puzzle_state.py        # e.g., image ID, tile order
-│     │     data_store.py          # load/save JSON
+│     │     highscore_model.py     
+│     │     image_model.py         
 │     ├── View/
 │     │     routes.py              # all @app.route handlers
-│     ├── Controller/
-│     │     logic.py               # win check, move handler, etc.
-│     └── Database/
-│           database.py            # access database
-│
+│     └── Controller/
+│           image_manager.py               
+│           score_controller.py
+│     
 ├── static/
 │     ├── css/
-│     │     style.css
+│     │     global.css
+│     │     highscore.css
+│     │     index.css
+│     │     puzzle_settings.css
+│     │     puzzle_play.css
+│     ├── font/
+│     │     PressStart2P-Regular.ttf
 │     └── js/
-│           puzzle.js              # board logic
-│           ui.js
-│           controller.js
+│           highscore.js              
+│           index.js
+│           puzzle_play.js
+│           puzzle_settings.js
 |
 ├── test/
-│     └── test.py/                 # tests for the app
+│     └── test_backend.py/                 # tests for the app
 │
 ├── docs/
-│     ├── architecture.md/         # how the project is structured
-│     ├── expansionideas.md/       # what to implement in future updates
-│     └── knownissues.md/          # current concerns and unsolved bugs and errors
+│     └── project_structure.md/ 
 │
 ├── templates/
-│     index.html
+│       highscore.html              
+│       index.html
+│       puzzle_play.html
+│       puzzle_settings.html
 │
-└── README.md                      # Setup instructions
+└── README.md                   
+
