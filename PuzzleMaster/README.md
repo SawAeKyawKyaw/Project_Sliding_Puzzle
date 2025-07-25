@@ -1,89 +1,133 @@
-# PuzzleMaster
+# Puzzle Master
 
-## Overview  
-PuzzleMaster is a sliding puzzle web application built with Flask (Python) using the MVC architecture. The game features customizable puzzles, score tracking, and an interactive user interface.
+## 1. Overview
+    Puzzle Master is a fully offline, web-based sliding puzzle game built with Flask.  
+    It tracks player scores based on moves and time taken to solve puzzles.  
+    The project uses a clean MVC architecture to ensure scalability and ease of future expansions, such as adding new game modes or features.
 
-## Features  
-- Interactive sliding puzzle gameplay  
-- Upload and use custom puzzle images  
-- Track high scores saved in JSON format  
-- Responsive and clean UI with CSS and JavaScript  
-- MVC structure for clear separation of concerns  
+## 2. Features
+- Fully offline gameplay — no internet connection required  
+- Sliding puzzle game with multiple puzzle images  
+- Option to choose difficulty by selecting grid size (e.g., 3x3, 4x4)  
+- Ability to select different puzzle images for gameplay  
+- Score tracking based on the number of moves and elapsed time  
+- Clean Model-View-Controller (MVC) architecture for modularity and scalability  
+- JSON-based highscore storage for easy data management  
+- Responsive UI with organized static assets (CSS, JS, images)  
+- Future-ready design to support additional game modes or features
 
-## Folder Structure  
+## 3. Folder Structure (Optional but helpful)
+```
 PuzzleMaster/
 │
-├── app.py # Flask application entry point
-├── data/ # JSON files storing highscores
+├── app.py # Flask entry
+├── data/ # All JSON files (highscores)
 │ └── scores.json
-├── images/ # All game and UI images
+├── images/
 │ ├── miscellaneous_images/ # UI images
-│ └── puzzle_images/ # Game images and user uploads
-├── MVC/ # Model-View-Controller components
+│ └── puzzle_images/ # Game images + uploads
+├── MVC/
 │ ├── Model/
 │ │ ├── highscore_model.py
 │ │ └── image_model.py
 │ ├── View/
-│ │ └── routes.py # Flask route handlers
+│ │ └── routes.py # all @app.route handlers
 │ └── Controller/
 │ ├── image_manager.py
 │ └── score_controller.py
-├── static/ # Static assets (CSS, fonts, JS)
+├── static/
 │ ├── css/
+│ │ ├── global.css
+│ │ ├── highscore.css
+│ │ ├── index.css
+│ │ ├── puzzle_settings.css
+│ │ └── puzzle_play.css
 │ ├── font/
+│ │ └── PressStart2P-Regular.ttf
 │ └── js/
-├── test/ # Unit tests
-│ └── test_backend.py
-├── docs/ # Documentation files
+│ ├── highscore.js
+│ ├── index.js
+│ ├── puzzle_play.js
+│ └── puzzle_settings.js
+├── test/
+│ └── test_backend.py # tests for the app
+├── docs/
 │ └── project_structure.md
-├── templates/ # HTML templates for Flask
-└── README.md # Project documentation
+├── templates/
+│ ├── highscore.html
+│ ├── index.html
+│ ├── puzzle_play.html
+│ └── puzzle_settings.html
+└── README.md
+```
 
-bash
-Copy
-Edit
+## 4. Installation
+### Prerequisites
+- Python 3.x installed
+- Git installed (optional if cloning)
 
-## Installation & Setup  
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/your-username/PuzzleMaster.git
-Navigate into the project folder:
+### Steps
+1. Clone the repository
+```
+[Cloning repo](https://github.com/SawAeKyawKyaw/Project_Sliding_Puzzle)
+cd Puzzle Master
+```
 
-bash
-Copy
-Edit
-cd PuzzleMaster
-(Optional) Create and activate a virtual environment:
-
-bash
-Copy
-Edit
+2. Create and activate a virtual environment
+- On Windows:
+```
 python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
-Install dependencies:
+.\venv\Scripts\activate
+```
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the Flask app:
+- On MacOS/Linux:
+```
+python3 -m venv venv
+source venv/bin/activate
+```
 
-bash
-Copy
-Edit
-flask run
-or
+3. Install Flask
+```
+pip install flask
+```
 
-bash
-Copy
-Edit
+## 5. Usage
+To start the Puzzle Master app:
+```
+# From inside the PuzzleMaster folder (and with virtual environment activated if used)
 python app.py
-Usage
-Open your web browser and navigate to http://localhost:5000
+```
 
-Use the UI to play sliding puzzles, upload images, and check high scores
+Then open your browser and go to:
+```
+http://127.0.0.1:5000/
+```
 
-Dependencies
-Flask
+### How to play:
+- Choose difficulty by selecting grid size and images.
+- Play the sliding puzzle.
+- Your score is tracked based on moves and timer.
+- Scores are saved locally (offline).
 
-(Add others here if you have more)
+## 6. Dependencies
+The project requires the following Python package:
+
+- **Flask** — used as the backend web framework
+
+All other modules (`os`, `typing`, `datetime`, `uuid`) are built-in Python libraries and do not require separate installation.
+
+To install Flask:
+
+```
+pip install flask
+```
+
+## 7. Future Work
+
+- Implement image upload functionality  
+- Add new puzzle types and game modes  
+- Enhance UI/UX with animations and sounds
+
+
+## 8. Contact
+saw.ae.kyaw.kyaw.sakk@gmail.com
