@@ -1,7 +1,7 @@
 # app.py
 # Entry point for the Flask application.
 
-from MVC.View.routes import create_app  # Import the function that sets up the Flask app
+from backend.route.routes import create_app  # Import the function that sets up the Flask app
 
 app = create_app()  # Instantiate the Flask application
 

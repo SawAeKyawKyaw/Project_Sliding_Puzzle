@@ -8,15 +8,15 @@ PuzzleMaster/
 │     ├── miscellaneous_images/    # UI images
 │     └── puzzle_images/           # Game images + uploads
 │
-├── MVC/
-│     ├── Model/
-│     │     highscore_model.py     
-│     │     image_model.py         
-│     ├── View/
-│     │     routes.py              # all @app.route handlers
-│     └── Controller/
-│           image_manager.py               
-│           score_controller.py
+├── backend/
+│   ├── model/
+│   │   ├── score_model.py         # handles reading/writing scores
+│   │   └── image_model.py         # fetch image filenames
+│   ├── service/
+│   │   ├── highscore_service.py   # handles the logic
+│   │   └── image_service.py          
+│   └── routes/
+│       └── routes.py              # all @app.route endpoints
 │     
 ├── static/
 │     ├── css/
@@ -46,4 +46,3 @@ PuzzleMaster/
 │       puzzle_settings.html
 │
 └── README.md                   
-
